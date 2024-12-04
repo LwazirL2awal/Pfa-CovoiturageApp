@@ -1,0 +1,27 @@
+type Mutation{
+    createUser(userDto:UserDto,passwordDto:PasswordDto):UserDto!
+}
+
+type PasswordDto {
+    pwdactuel:String
+    pwdNouveau:String
+}
+
+type UserDto{
+    name:String
+    nom:String
+    email:String
+    prenom:String
+    telephone:String
+    sexe:Gender
+    age:Int
+    nombre_voya:Int
+    N_permis:String
+    cin:String
+    banned:Boolean
+
+}
+
+enum Gender {
+   Homme,Femme
+}
