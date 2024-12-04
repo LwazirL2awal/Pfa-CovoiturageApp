@@ -35,6 +35,7 @@ public class UserService {
     private UserRepos userRepos;
 
     //create-Section
+    /*
     public User createUser(UserDto userDto,PasswordDto passwordDto) throws AlreadyUsedException {
         if (userDto == null || passwordDto == null || passwordDto.getNouveaupassword() == null) {
             throw new IllegalArgumentException("User data or password is missing");
@@ -45,19 +46,15 @@ public class UserService {
         User user = DtoMapping.DtotoUser(userDto, passwordDto);
 
         return userRepos.save(user);
-    }
+    }*/
 
     public Passenger createPassenger(UserDto userDto, PasswordDto passwordDto) {
-        if (userDto == null || passwordDto == null || passwordDto.getNouveaupassword() == null) {
-            throw new IllegalArgumentException("User data or password is missing");
-        }
+
         return passengerRepos.save(DtoMapping.DtotoPassenger(userDto,passwordDto));
     }
 
     public Driver createDriver(UserDto userDto, PasswordDto passwordDto) {
-        if (userDto == null || passwordDto == null || passwordDto.getNouveaupassword() == null) {
-            throw new IllegalArgumentException("User data or password is missing");
-        }
+
         Driver driver = DtoMapping.DtotoDriver(userDto,passwordDto);
         DriverCondidature condidature = new DriverCondidature(LocalDateTime.now(), Statut.En_Cours,driver);
         condidureRepos.save(condidature);
@@ -88,11 +85,7 @@ public class UserService {
 
     //Update-Section
     public Boolean changePassword(Long userId, PasswordDto passwordDto) {
-        if(userId.equals(null) || passwordDto.equals(null))
-        {
 
-            throw new IllegalArgumentException("Arguments nulles");
-        }
         User user = userRepos.findById(userId).orElseThrow(() -> new NoSuchElementException("No User with id: "+userId+" found"));
         if(passwordEncoder.matches(passwordDto.getPasswordActuel(), user.getPassword()))
         {
@@ -103,10 +96,7 @@ public class UserService {
     }
 
     public void updateDriver(Long driverId, UserDto userDto) {
-        if(driverId.equals(null) || userDto.equals(null))
-        {
-            throw new IllegalArgumentException("Arguments nulles");
-        }
+
         driverRepos.findById(driverId).ifPresentOrElse(driver->{
             Optional.ofNullable(userDto.getNom()).ifPresent(driver::setNom);
             Optional.ofNullable(userDto.getPrenom()).ifPresent(driver::setPrenom);
@@ -123,10 +113,6 @@ public class UserService {
     }
 
     public void updatePassenger(Long passengerId, UserDto userDto) {
-        if(passengerId.equals(null) || userDto.equals(null))
-        {
-            throw new IllegalArgumentException("Arguments nulles");
-        }
         passengerRepos.findById(passengerId).ifPresentOrElse(passenger->{
             Optional.ofNullable(userDto.getNom()).ifPresent(passenger::setNom);
             Optional.ofNullable(userDto.getPrenom()).ifPresent(passenger::setPrenom);
@@ -142,10 +128,7 @@ public class UserService {
 
 
     public Vehicule AttribuerVehicule(Long userId, VehiculeDto vehiculeDto) {
-        if(userId.equals(null) || vehiculeDto.equals(null))
-        {
-            throw new IllegalArgumentException("Arguments nulles");
-        }
+
         Driver driver = driverRepos.findById(userId).orElseThrow(() ->new NoSuchElementException("No driver found"));
         Vehicule vehicule = DtoMapping.DtotoVehicule(vehiculeDto);
         vehicule.setDriver(driver);
