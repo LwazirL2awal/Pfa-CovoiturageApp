@@ -11,17 +11,9 @@
         <module name="RH" />
         <module name="Discovery" />
         <module name="Notification-Service" />
+        <module name="Voyage-Service" />
         <module name="Users" />
         <module name="Notification" />
-      </profile>
-      <profile name="Annotation profile for Voyage-Service" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
-        </processorPath>
-        <module name="Voyage-Service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
