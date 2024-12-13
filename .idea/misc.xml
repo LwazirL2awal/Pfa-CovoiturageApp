@@ -15,6 +15,7 @@
         <option value="$PROJECT_DIR$/RH/pom.xml" />
         <option value="$PROJECT_DIR$/Gateway/pom.xml" />
         <option value="$PROJECT_DIR$/Voyage-Service/pom.xml" />
+        <option value="$PROJECT_DIR$/PaymentService/pom.xml" />
       </list>
     </option>
     <option name="workspaceImportForciblyTurnedOn" value="true" />
