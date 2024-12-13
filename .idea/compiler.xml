@@ -11,9 +11,26 @@
         <module name="RH" />
         <module name="Discovery" />
         <module name="Notification-Service" />
-        <module name="Voyage-Service" />
         <module name="Users" />
         <module name="Notification" />
+      </profile>
+      <profile name="Annotation profile for Voyage-Service" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar" />
+        </processorPath>
+        <module name="Voyage-Service" />
+      </profile>
+      <profile name="Annotation profile for PaymentService" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+        </processorPath>
+        <module name="PaymentService" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -27,6 +44,7 @@
       <module name="Gateway" options="-parameters" />
       <module name="Notification" options="-parameters" />
       <module name="Notification-Service" options="-parameters" />
+      <module name="PaymentService" options="-parameters" />
       <module name="RH" options="-parameters" />
       <module name="Users" options="-parameters" />
       <module name="Voyage" options="-parameters" />

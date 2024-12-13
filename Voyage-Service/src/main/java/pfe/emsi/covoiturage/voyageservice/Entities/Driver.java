@@ -1,6 +1,9 @@
 package pfe.emsi.covoiturage.voyageservice.Entities;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,6 +13,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor@Setter@Getter
 public class Driver extends User{
+
     private String N_permis;
     private String cin;
 

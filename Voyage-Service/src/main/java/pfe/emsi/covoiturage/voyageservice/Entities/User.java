@@ -11,7 +11,7 @@ import lombok.Setter;
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String nom;
     private String password;
@@ -20,7 +20,7 @@ public class User {
     private String telephone;
     private Gender sexe;
     private int age;
-    private int nombre_voya;
+    private int nombrevoyage;
     private Boolean banned = false;
 
     public User(){
@@ -33,7 +33,7 @@ public class User {
         this.telephone = telephone;
         this.sexe = sexe;
         this.age = age;
-        this.nombre_voya = nombre_voya;
+        this.nombrevoyage = nombre_voya;
         this.banned = banned;
 
     }
