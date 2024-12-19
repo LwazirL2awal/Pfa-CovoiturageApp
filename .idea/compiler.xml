@@ -7,11 +7,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Gateway" />
-        <module name="RH" />
         <module name="Discovery" />
         <module name="Notification-Service" />
         <module name="Users" />
+        <module name="Gateway" />
         <module name="Notification" />
       </profile>
       <profile name="Annotation profile for Voyage-Service" enabled="true">
@@ -35,6 +34,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Discovery-Service" target="23" />
+      <module name="RH" target="17" />
       <module name="Voyage" target="17" />
     </bytecodeTargetLevel>
   </component>

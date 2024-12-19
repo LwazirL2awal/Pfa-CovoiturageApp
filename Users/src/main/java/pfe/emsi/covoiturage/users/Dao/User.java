@@ -6,14 +6,17 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+
 @Entity
 @AllArgsConstructor
-@Setter@Getter
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Setter
+@Getter
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    private String cin;
     private String nom;
     private String password;
     private String email;
@@ -26,17 +29,6 @@ public class User {
 
     public User(){
     }
-    public User(String nom, String encode, String email, String prenom, String telephone, Gender sexe,int age, int nombre_voya, Boolean banned) {
-        this.nom = nom;
-        this.password = encode;
-        this.email = email;
-        this.prenom = prenom;
-        this.telephone = telephone;
-        this.sexe = sexe;
-        this.age = age;
-        this.nombre_voya = nombre_voya;
-        this.banned = banned;
 
-    }
 
 }

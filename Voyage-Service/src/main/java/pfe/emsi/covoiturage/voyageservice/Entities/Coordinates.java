@@ -14,9 +14,9 @@ import lombok.Setter;
 @Embeddable
 public class Coordinates {
     @Basic
-    private float x;
+    private double x;
     @Basic
-    private float y;
+    private double y;
     @Basic
     private String Label;
 }
